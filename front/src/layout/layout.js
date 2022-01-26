@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const HFlex = styled.div`
   display: flex;
@@ -13,4 +13,13 @@ const Center = styled(HFlex)`
   justify-content: center;
 `;
 
-export { HFlex, VFlex, Center };
+const Container = styled(VFlex)`
+  ${({ theme }) => {
+    return css`
+      align-items: center;
+      margin-top: ${theme.margins.xl};
+    `;
+  }}
+`;
+
+export { HFlex, VFlex, Center, Container };

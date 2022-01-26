@@ -3,3 +3,8 @@ export interface TitleType {
   theme: string;
   toggleTheme: () => void;
 }
+
+export interface ThemeProps {
+  theme: string;
+  toggleTheme: () => void;
+}
