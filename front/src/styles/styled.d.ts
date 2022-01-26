@@ -31,23 +31,23 @@ declare module 'styled-components' {
       };
 
       weight: {
-        light: string;
-        normal: string;
-        bold: string;
+        light: number;
+        normal: number;
+        bold: number;
       };
+    };
 
-      colors: {
-        white: string;
-        darkWhite: string;
-        red: string;
-        yellow: string;
-        blue: string;
-        dark: string;
-        light: string;
-        primary: string;
-        bgColor: string;
-        textColor: string;
-      };
+    color: {
+      white: string;
+      darkWhite: string;
+      red: string;
+      yellow: string;
+      blue: string;
+      dark: string;
+      light: string;
+      primary: string;
+      bgColor: string;
+      textColor: string;
     };
   }
 }

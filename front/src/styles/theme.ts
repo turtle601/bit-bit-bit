@@ -1,3 +1,5 @@
+import { DefaultTheme } from 'styled-components';
+
 const margins = {
   sm: '.5rem',
   base: '1rem',
@@ -39,7 +41,7 @@ const colors = {
   blue: '#0099ff',
 
   dark: '#333',
-  light: 'fff',
+  light: '#fff',
 };
 
 // 테마에 따라 다른 값을 갖는 색상 값입니다
@@ -65,12 +67,12 @@ const defalutTheme = {
 };
 
 // 각 테마는 공통 변수와 함께, 각기 다른 색상 값들을 갖습니다.
-export const darkTheme = {
+export const darkTheme: DefaultTheme = {
   ...defalutTheme,
-  colors: darkThemeColors,
+  color: darkThemeColors,
 };
 
-export const lightTheme = {
+export const lightTheme: DefaultTheme = {
   ...defalutTheme,
-  colors: lightThemeColors,
+  color: lightThemeColors,
 };
