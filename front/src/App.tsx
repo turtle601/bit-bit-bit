@@ -9,8 +9,8 @@ import { lightTheme, darkTheme } from './styles/theme';
 
 import { useDarkMode } from './hooks/useDarkMode';
 
-import Coins from './pages/coins';
-import Coin from './pages/coin';
+import Home from './pages/home';
+import CoinDetail from './pages/coinDetail';
 
 const App = () => {
   const [theme, toggleTheme] = useDarkMode();
@@ -20,11 +20,11 @@ const App = () => {
       <Routes>
         <Route
           path="/"
-          element={<Coins theme={theme} toggleTheme={toggleTheme} />}
+          element={<Home theme={theme} toggleTheme={toggleTheme} />}
         />
         <Route
           path="/:coinId"
-          element={<Coin theme={theme} toggleTheme={toggleTheme} />}
+          element={<CoinDetail theme={theme} toggleTheme={toggleTheme} />}
         />
       </Routes>
     </ThemeProvider>

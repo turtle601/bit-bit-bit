@@ -6,7 +6,7 @@ import { Container } from '../layout/layout';
 
 import Title from '../components/Title';
 
-const Coin = ({ theme, toggleTheme }: ThemeProps) => {
+const CoinDetail = ({ theme, toggleTheme }: ThemeProps) => {
   const { coinId } = useParams<string>();
 
   return (
@@ -16,4 +16,4 @@ const Coin = ({ theme, toggleTheme }: ThemeProps) => {
   );
 };
 
-export default Coin;
+export default CoinDetail;

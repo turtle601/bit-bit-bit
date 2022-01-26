@@ -6,7 +6,7 @@ import Title from '../components/Title';
 
 import { Container } from '../layout/layout';
 
-const Coins = ({ theme, toggleTheme }: ThemeProps) => {
+const Home = ({ theme, toggleTheme }: ThemeProps) => {
   return (
     <Container>
       <Title theme={theme} toggleTheme={toggleTheme} />
@@ -14,4 +14,4 @@ const Coins = ({ theme, toggleTheme }: ThemeProps) => {
   );
 };
 
-export default Coins;
+export default Home;
