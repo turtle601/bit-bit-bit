@@ -14,7 +14,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
       <GlobalStyle />
-      <Title toggleTheme={toggleTheme} />
+      <Title theme={theme} toggleTheme={toggleTheme} />
     </ThemeProvider>
   );
 };
