@@ -81,3 +81,8 @@ export interface PriceType {
     };
   };
 }
+
+export interface CoinInfoProps {
+  info: InfoType | undefined;
+  price: PriceType | undefined;
+}

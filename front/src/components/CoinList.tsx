@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { ChildrenProps } from '../types/types';
 
 const List = styled.div`
-  width: 75vw;
+  width: 50vw;
 
   ${({ theme }) => {
     return css`

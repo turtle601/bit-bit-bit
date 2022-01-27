@@ -8,6 +8,7 @@ import { fetchCoinIdApi, fetchCoinPriceApi } from '../api/api';
 import { Container } from '../layout/layout';
 
 import Title from '../components/Title';
+import CoinInfo from '../components/CoinInfo';
 
 const CoinDetail = ({ theme, toggleTheme }: ThemeProps) => {
   const { coinId } = useParams();
@@ -31,14 +32,7 @@ const CoinDetail = ({ theme, toggleTheme }: ThemeProps) => {
   return (
     <Container>
       <Title theme={theme} toggleTheme={toggleTheme} name={coinId} />
-      {loading ? (
-        <div>Loading</div>
-      ) : (
-        <>
-          <div>{JSON.stringify(info)}</div>
-          <div>{JSON.stringify(price)}</div>
-        </>
-      )}
+      {loading ? <div>Loading</div> : <CoinInfo info={info} price={price} />}
     </Container>
   );
 };

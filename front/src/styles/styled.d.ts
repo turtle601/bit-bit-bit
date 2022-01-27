@@ -46,6 +46,7 @@ declare module 'styled-components' {
       dark: string;
       light: string;
       primary: string;
+      secondary: string;
       bgColor: string;
       textColor: string;
     };
