@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Route, Routes } from 'react-router-dom';
 
 import { ThemeProps, InfoType, PriceType } from '../types/types';
 
@@ -9,6 +9,8 @@ import { Container } from '../layout/layout';
 
 import Title from '../components/Title';
 import CoinInfo from '../components/CoinInfo';
+import CoinChart from '../components/CoinChart';
+import CoinPriceChart from '../components/CoinPriceChart';
 
 const CoinDetail = ({ theme, toggleTheme }: ThemeProps) => {
   const { coinId } = useParams();
@@ -30,10 +32,16 @@ const CoinDetail = ({ theme, toggleTheme }: ThemeProps) => {
   }, [coinId]);
 
   return (
-    <Container>
-      <Title theme={theme} toggleTheme={toggleTheme} name={coinId} />
-      {loading ? <div>Loading</div> : <CoinInfo info={info} price={price} />}
-    </Container>
+    <>
+      <Container>
+        <Title theme={theme} toggleTheme={toggleTheme} name={coinId} />
+        {loading ? <div>Loading</div> : <CoinInfo info={info} price={price} />}
+        <Routes>
+          <Route path="chart" element={<CoinChart />} />
+          <Route path="price" element={<CoinPriceChart />} />
+        </Routes>
+      </Container>
+    </>
   );
 };
 
