@@ -48,8 +48,8 @@ const DarkModeButton = styled(Center)`
 `;
 
 const Header = styled.header`
-  width: 75vw;
-  height: 20vh;
+  width: 50vw;
+  height: 10vh;
 
   display: flex;
   align-items: center;
@@ -63,7 +63,7 @@ const Header = styled.header`
         flex: 1;
         font-weight: ${theme.fonts.weight.bold};
         display: flex;
-        font-size: ${theme.fonts.size.lg};
+        font-size: ${theme.fonts.size.base};
       }
     `;
   }}
