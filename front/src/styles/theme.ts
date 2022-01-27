@@ -49,6 +49,7 @@ const lightThemeColors = {
   ...colors,
   primary: '#22b8cf',
   secondary: '#324B50',
+  third: '#95B0B6',
   bgColor: colors.white,
   textColor: colors.dark,
 };
@@ -57,6 +58,7 @@ const darkThemeColors = {
   ...colors,
   primary: '#22b8cf',
   secondary: '#324B50',
+  third: '#95B0B6',
   bgColor: colors.dark,
   textColor: colors.white,
 };

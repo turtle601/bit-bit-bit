@@ -23,7 +23,7 @@ const App = () => {
           element={<Home theme={theme} toggleTheme={toggleTheme} />}
         />
         <Route
-          path="/:coinId"
+          path="/:coinId/*"
           element={<CoinDetail theme={theme} toggleTheme={toggleTheme} />}
         />
       </Routes>
