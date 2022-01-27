@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Route, Routes } from 'react-router-dom';
+import styled, { css } from 'styled-components';
 
 import { ThemeProps, InfoType, PriceType } from '../types/types';
 
 import { fetchCoinIdApi, fetchCoinPriceApi } from '../api/api';
 
 import { Container } from '../layout/layout';
+
+import { Tabs, Tab } from '../styles/custom';
 
 import Title from '../components/Title';
 import CoinInfo from '../components/CoinInfo';
@@ -36,6 +39,10 @@ const CoinDetail = ({ theme, toggleTheme }: ThemeProps) => {
       <Container>
         <Title theme={theme} toggleTheme={toggleTheme} name={coinId} />
         {loading ? <div>Loading</div> : <CoinInfo info={info} price={price} />}
+        <Tabs>
+          <Tab>Chart</Tab>
+          <Tab>Price</Tab>
+        </Tabs>
         <Routes>
           <Route path="chart" element={<CoinChart />} />
           <Route path="price" element={<CoinPriceChart />} />
