@@ -7,7 +7,7 @@ import { fetchCoinIdApi, fetchCoinPriceApi } from '../api/api';
 
 import { Container } from '../layout/layout';
 
-import { Tabs, Tab } from '../styles/custom';
+import { Tabs, Tab, LinkStyle } from '../styles/custom';
 
 import Title from '../components/Title';
 import CoinInfo from '../components/CoinInfo';
@@ -39,8 +39,12 @@ const CoinDetail = ({ theme, toggleTheme }: ThemeProps) => {
         <Title theme={theme} toggleTheme={toggleTheme} name={coinId} />
         {loading ? <div>Loading</div> : <CoinInfo info={info} price={price} />}
         <Tabs>
-          <Tab>Chart</Tab>
-          <Tab>Price</Tab>
+          <Tab>
+            <LinkStyle to="chart">Chart</LinkStyle>
+          </Tab>
+          <Tab>
+            <LinkStyle to="price">Price</LinkStyle>
+          </Tab>
         </Tabs>
         <Routes>
           <Route path="chart" element={<CoinChart />} />

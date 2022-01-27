@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CoinPriceChart = () => {
-  return <>CoinChart</>;
+  return <>CoinPriceChart</>;
 };
 
 export default CoinPriceChart;
