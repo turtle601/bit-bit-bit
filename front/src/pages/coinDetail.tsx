@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Route, Routes } from 'react-router-dom';
-import styled, { css } from 'styled-components';
 
 import { ThemeProps, InfoType, PriceType } from '../types/types';
 

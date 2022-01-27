@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 import { HFlex, Center } from '../layout/layout';
 
 export const Tabs = styled(HFlex)`
@@ -23,4 +24,8 @@ export const Tab = styled(Center)`
   &:hover {
     background: #adb5bd;
   }
+`;
+
+export const LinkStyle = styled(Link)`
+  display: block;
 `;

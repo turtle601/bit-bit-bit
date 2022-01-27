@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import styled, { css } from 'styled-components';
 
 import { CoinDataProps } from '../types/types';
+
+import { LinkStyle } from '../styles/custom';
 
 const Item = styled.div`
   cursor: pointer;
@@ -25,7 +26,7 @@ const CoinItem = ({ coinData }: CoinDataProps) => {
   console.log(coinData);
   return (
     <Item>
-      <Link to={`/${coinData.id}`}>{coinData.name} &rarr; </Link>
+      <LinkStyle to={`/${coinData.id}`}>{coinData.name} &rarr; </LinkStyle>
     </Item>
   );
 };
