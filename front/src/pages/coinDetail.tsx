@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { ThemeProps } from '../types/types';
+import { ThemeProps, InfoType, PriceType } from '../types/types';
 
 import { fetchCoinIdApi, fetchCoinPriceApi } from '../api/api';
 
@@ -12,8 +12,8 @@ import Title from '../components/Title';
 const CoinDetail = ({ theme, toggleTheme }: ThemeProps) => {
   const { coinId } = useParams();
 
-  const [info, setInfo] = useState({});
-  const [price, setPrice] = useState({});
+  const [info, setInfo] = useState<InfoType>();
+  const [price, setPrice] = useState<PriceType>();
 
   useEffect(() => {
     (async () => {
