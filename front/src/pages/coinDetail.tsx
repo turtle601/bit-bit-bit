@@ -14,6 +14,7 @@ const CoinDetail = ({ theme, toggleTheme }: ThemeProps) => {
 
   const [info, setInfo] = useState<InfoType>();
   const [price, setPrice] = useState<PriceType>();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
@@ -22,14 +23,22 @@ const CoinDetail = ({ theme, toggleTheme }: ThemeProps) => {
 
       setInfo(apiCoinId);
       setPrice(apiCoinPrice);
+
+      setLoading(false);
     })();
   }, [coinId]);
 
   return (
     <Container>
       <Title theme={theme} toggleTheme={toggleTheme} name={coinId} />
-      <div>{JSON.stringify(info)}</div>
-      <div>{JSON.stringify(price)}</div>
+      {loading ? (
+        <div>Loading</div>
+      ) : (
+        <>
+          <div>{JSON.stringify(info)}</div>
+          <div>{JSON.stringify(price)}</div>
+        </>
+      )}
     </Container>
   );
 };
