@@ -49,7 +49,7 @@ const CoinDetail = ({ theme, toggleTheme }: ThemeProps) => {
         </Tabs>
         <Routes>
           <Route path="chart" element={<CoinChart coinId={coinId} />} />
-          <Route path="price" element={<CoinPriceChart />} />
+          <Route path="price" element={<CoinPriceChart coinId={coinId} />} />
         </Routes>
       </Container>
     </>

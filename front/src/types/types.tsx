@@ -90,3 +90,14 @@ export interface CoinInfoProps {
 export interface CoinIdProps {
   coinId: string | undefined;
 }
+
+export interface chartDataType {
+  time_open: string;
+  time_close: string;
+  open: number;
+  high: number;
+  low: number;
+  close: number;
+  volume: number;
+  market_cap: number;
+}
