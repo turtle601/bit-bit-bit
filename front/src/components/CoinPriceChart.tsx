@@ -6,6 +6,8 @@ import { fetchCoinChartApi } from '../api/api';
 
 import { CoinIdProps, chartDataType } from '../types/types';
 
+import { makeTwoDecimal } from '../utils/utils';
+
 const CoinPriceChart = ({ coinId }: CoinIdProps) => {
   const [chartDataList, setChartItem] = useState<chartDataType[]>();
   const [loading, setLoading] = useState(true);
@@ -30,10 +32,10 @@ const CoinPriceChart = ({ coinId }: CoinIdProps) => {
                 return {
                   x: chartData.time_open,
                   y: [
-                    chartData.open,
-                    chartData.high,
-                    chartData.low,
-                    chartData.close,
+                    makeTwoDecimal(chartData.open),
+                    makeTwoDecimal(chartData.high),
+                    makeTwoDecimal(chartData.low),
+                    makeTwoDecimal(chartData.close),
                   ],
                 };
               }),

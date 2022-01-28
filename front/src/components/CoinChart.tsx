@@ -6,6 +6,8 @@ import { fetchCoinChartApi } from '../api/api';
 
 import { CoinIdProps, chartDataType } from '../types/types';
 
+import { makeTwoDecimal } from '../utils/utils';
+
 const CoinChart = ({ coinId }: CoinIdProps) => {
   const [chartdataList, setChartItem] = useState<chartDataType[]>();
   const [loading, setLoading] = useState(true);
@@ -26,7 +28,7 @@ const CoinChart = ({ coinId }: CoinIdProps) => {
           series={[
             {
               name: 'Price',
-              data: chartdataList?.map((price) => price.open),
+              data: chartdataList?.map((price) => makeTwoDecimal(price.open)),
             },
           ]}
           options={{
