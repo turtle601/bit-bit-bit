@@ -4,26 +4,16 @@ import styled, { css } from 'styled-components';
 
 import { fetchCoinChartApi } from '../api/api';
 
-import { CoinIdProps } from '../types/types';
+import { CoinIdProps, chartDataType } from '../types/types';
 
-interface chartDateType {
-  time_open: string;
-  time_close: string;
-  open: number;
-  high: number;
-  low: number;
-  close: number;
-  volume: number;
-  market_cap: number;
-}
+import { makeTwoDecimal } from '../utils/utils';
 
 const CoinChart = ({ coinId }: CoinIdProps) => {
-  const [chartdataList, setChartItem] = useState<chartDateType[]>();
+  const [chartdataList, setChartItem] = useState<chartDataType[]>();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     (async () => {
       const chartData = await fetchCoinChartApi(coinId);
-      console.log(chartData);
       setChartItem(chartData);
       setLoading(false);
     })();
@@ -38,7 +28,7 @@ const CoinChart = ({ coinId }: CoinIdProps) => {
           series={[
             {
               name: 'Price',
-              data: chartdataList?.map((price) => price.open),
+              data: chartdataList?.map((price) => makeTwoDecimal(price.open)),
             },
           ]}
           options={{
