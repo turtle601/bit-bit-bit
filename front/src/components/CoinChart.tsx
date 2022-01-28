@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Chart from 'react-apexcharts';
+import styled, { css } from 'styled-components';
 
 import { fetchCoinChartApi } from '../api/api';
 
@@ -22,12 +23,13 @@ const CoinChart = ({ coinId }: CoinIdProps) => {
   useEffect(() => {
     (async () => {
       const chartData = await fetchCoinChartApi(coinId);
+      console.log(chartData);
       setChartItem(chartData);
       setLoading(false);
     })();
   }, [coinId]);
   return (
-    <div>
+    <Section>
       {loading ? (
         'Loading chart...'
       ) : (
@@ -36,7 +38,7 @@ const CoinChart = ({ coinId }: CoinIdProps) => {
           series={[
             {
               name: 'Price',
-              data: chartdataList?.map((price) => price.close),
+              data: chartdataList?.map((price) => price.open),
             },
           ]}
           options={{
@@ -45,9 +47,9 @@ const CoinChart = ({ coinId }: CoinIdProps) => {
             },
             chart: {
               height: 300,
-              width: 500,
+              width: '100%',
               toolbar: {
-                show: false,
+                show: true,
               },
               background: 'transparent',
             },
@@ -60,15 +62,29 @@ const CoinChart = ({ coinId }: CoinIdProps) => {
               show: false,
             },
             xaxis: {
-              axisBorder: { show: false },
-              axisTicks: { show: false },
-              labels: { show: false },
+              axisBorder: { show: true },
+              axisTicks: { show: true },
+              labels: { show: true },
+              type: 'datetime',
+              categories: chartdataList?.map((price) => price.time_open),
+              title: {
+                text: 'Latest 2 Week',
+              },
             },
+            fill: {
+              type: 'gradient',
+              gradient: { gradientToColors: ['#0be881'], stops: [0, 100] },
+            },
+            colors: ['#0fbcf9'],
           }}
         />
       )}
-    </div>
+    </Section>
   );
 };
+
+const Section = styled.section`
+  width: 50vw;
+`;
 
 export default CoinChart;
