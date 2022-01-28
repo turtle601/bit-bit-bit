@@ -1,4 +1,6 @@
 # bit-bit-bit
+## 🖱 Purpose
+각 비트들의 정보와 가격 동향을 볼 수 있는 사이트
 
 ## 🌏 WebSite
 https://turtle601.github.io/bit-bit-bit
