@@ -86,3 +86,7 @@ export interface CoinInfoProps {
   info: InfoType | undefined;
   price: PriceType | undefined;
 }
+
+export interface CoinIdProps {
+  coinId: string | undefined;
+}

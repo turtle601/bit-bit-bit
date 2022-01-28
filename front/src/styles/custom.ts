@@ -30,5 +30,4 @@ export const LinkStyle = styled(Link)`
   width: 100%;
 
   display: block;
-  text-align: center;
 `;

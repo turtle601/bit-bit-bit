@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Route, Routes } from 'react-router-dom';
 
+import styled from 'styled-components';
 import { ThemeProps, InfoType, PriceType } from '../types/types';
 
 import { fetchCoinIdApi, fetchCoinPriceApi } from '../api/api';
@@ -40,19 +41,23 @@ const CoinDetail = ({ theme, toggleTheme }: ThemeProps) => {
         {loading ? <div>Loading</div> : <CoinInfo info={info} price={price} />}
         <Tabs>
           <Tab>
-            <LinkStyle to="chart">Chart</LinkStyle>
+            <LinkStyleCenter to="chart">Chart</LinkStyleCenter>
           </Tab>
           <Tab>
-            <LinkStyle to="price">Price</LinkStyle>
+            <LinkStyleCenter to="price">Price</LinkStyleCenter>
           </Tab>
         </Tabs>
         <Routes>
-          <Route path="chart" element={<CoinChart />} />
+          <Route path="chart" element={<CoinChart coinId={coinId} />} />
           <Route path="price" element={<CoinPriceChart />} />
         </Routes>
       </Container>
     </>
   );
 };
+
+const LinkStyleCenter = styled(LinkStyle)`
+  text-align: center;
+`;
 
 export default CoinDetail;
