@@ -52,6 +52,7 @@ const CoinChart = ({ coinId }: CoinIdProps) => {
                 show: true,
               },
               background: 'transparent',
+              foreColor: '#95B0B6',
             },
             grid: { show: false },
             stroke: {
